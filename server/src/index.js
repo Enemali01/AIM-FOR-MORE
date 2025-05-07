@@ -29,12 +29,23 @@ const __dirname = path.dirname(__filename);
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+const allowedOrigins = [
+  'http://localhost:8080',
+  'https://aim-for-more.vercel.app'
+];
 
 app.use(cors({
+  origin: allowedOrigins,
   credentials: true,
-  origin: 'https://aim-for-more-498j.vercel.app/',
   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
 }));
+
+
+// app.use(cors({
+//   credentials: true,
+//   origin: 'https://aim-for-more-498j.vercel.app/',
+//   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
+// }));
 
 
 app.use('/api/users', userRoute)

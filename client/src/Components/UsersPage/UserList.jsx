@@ -5,7 +5,7 @@ import { columns, AdminButtons } from '../../utils/AdminHelpers'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more.vercel.app/'
 
 function UserList() {
   const [adminUsers, setAdminUsers] = useState([])

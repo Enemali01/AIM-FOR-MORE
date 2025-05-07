@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Modal } from 'react-bootstrap'
 
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more.vercel.app/'
 function Profile() {
 
   const { user } = useAuth()

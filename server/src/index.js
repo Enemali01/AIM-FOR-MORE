@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
   credentials: true,
-  origin: 'https://localhost:8080',
+  origin: 'https://aim-for-more-498j.vercel.app/',
   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
 }));
 

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more.vercel.app/'
 
 function AddCategory() {
   const navigate = useNavigate()

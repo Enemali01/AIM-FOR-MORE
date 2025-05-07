@@ -7,7 +7,7 @@ import { useAuth } from '../../Components/Hook/authContext';
 import Footer from '../../Components/Footer/Footer';
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/';
+const apiUrl = 'http://localhost:5000';
 
 function ViewBlog() {
   const { id } = useParams();

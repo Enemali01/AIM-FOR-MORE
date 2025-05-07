@@ -92,11 +92,11 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile nav links only */}
-        <div className={`xl:hidden bg-emerald-700 w-full text-white text-lg flex flex-col border-t transition-all duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>
-          <Link to="/about" className="text-center py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
-          <Link to="/product" className="text-center py-2" onClick={() => setIsMenuOpen(false)}>Shop</Link>
-          <Link to="/contact" className="text-center py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-          <Link to="/blog" className="text-center py-2" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+        <div className={`xl:hidden bg-emerald-700 w-full text-lg flex flex-col text-white border-t transition-all duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>
+          <Link to="/about" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
+          <Link to="/product" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+          <Link to="/contact" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+          <Link to="/blog" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>Blog</Link>
         </div>
 
         {/* Unified user dropdown (mobile + desktop) */}

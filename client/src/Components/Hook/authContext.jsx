@@ -4,7 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'http://localhost:5000'
 
 const userContext = createContext();
 const AuthContext = ({children}) => {

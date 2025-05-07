@@ -5,7 +5,7 @@ import { useAuth } from './Components/Hook/authContext';
 import { useCart } from 'react-use-cart';
 import axios from 'axios';
 
-const apiUrl = 'https://aim-for-more.vercel.app/';
+const apiUrl = 'http://localhost:5000';
 
 function App() {
   const { user } = useAuth();

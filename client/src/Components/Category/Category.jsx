@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'http://localhost:5000'
 
 function Category() {
   const {id} = useParams();

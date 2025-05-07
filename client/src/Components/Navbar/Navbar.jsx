@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import * as FaIcon from 'react-icons/fa';
 import {IoIosCloseCircle, IoMdArrowDropdown, IoMdClose} from 'react-icons/io';
-import logo from '../../image/aim logo.jpg';
+import logo from '../../image/Aim-logo.jpg';
+
+// import logo from '../../image/aim logo.jpg';
 import { useAuth } from '../Hook/authContext';
 import { useCart } from 'react-use-cart';
 

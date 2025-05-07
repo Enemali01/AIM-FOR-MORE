@@ -1,0 +1,22 @@
+.slider{
+  height: 500px;
+  width: 100%;
+  background: fixed;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  opacity: 0.6;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.carousel-indicators [data-bs-target]{
+  border-radius: 100% !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.carousel-control-next-icon{
+  display: none !important;
+}
+.carousel-control-prev-icon{
+  display: none !important;
+}

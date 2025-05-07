@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Heroblogimg from '../../image/london2.jpeg'
+import Heroblogimg from '../../assets/image/london2.jpeg'
 import Footer from '../../Components/Footer/Footer'
 
 const apiUrl = 'http://localhost:5000'

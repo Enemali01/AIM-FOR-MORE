@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ConImage from '../../image/caim.gif'
+import ConImage from '../../assets/image/caim.gif'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import { FaTelegramPlane } from 'react-icons/fa'

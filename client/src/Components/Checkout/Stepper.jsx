@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Stepper.css'
+import './stepper.css'
 import Account from '../Steps/Account'
 import Details from '../Steps/Details'
 import Final from '../Steps/Final'

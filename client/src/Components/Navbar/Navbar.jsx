@@ -43,7 +43,7 @@ export default function Navbar() {
   return (
     <>
       <section>
-        <nav className="flex sticky top-0 w-full left-0 z-20 justify-between items-center px-6 pt-1 pb-1 md:px-30 bg-emerald-700 drop-shadow-4xl">
+        <nav className="flex fixed top-0 w-full left-0 z-20 justify-between items-center px-6 pt-1 pb-1 md:px-30 bg-emerald-700 drop-shadow-4xl">
           <Link to="/">
             <img src={logo} alt="logo" className="w-12 object-contain rounded-3xl hover:scale-110 transition-all" />
           </Link>

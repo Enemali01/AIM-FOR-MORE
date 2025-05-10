@@ -6,7 +6,7 @@ import * as FaIcon from 'react-icons/fa'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://aim-for-more.vercel.app/';
 
 export default function createAdminPost() {
 
@@ -228,7 +228,7 @@ export default function createAdminPost() {
                           post.description.length > 50 ? `${post.description.substring(0, 50)}.......` : post.description
                         }</td>
                     <td className='p-1'>
-                      <img src={`http://localhost:5000/images/${post.file}`+file}  alt='blog imag' className='w-15 h-10 rounded-xl' />
+                      <img src={`https://aim-for-more.vercel.app//images/${post.file}`+file}  alt='blog imag' className='w-15 h-10 rounded-xl' />
                     </td>
                     <td className='p-1'>
                     <Link to={'/dashboard/create/post/post/' + post._id} className='text-decoration-none'>

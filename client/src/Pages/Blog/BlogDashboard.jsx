@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { colums , BlogButton } from '../../utils/BlogHelper'
 
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more.vercel.app/'
 function BlogDashboard() {
 
   const [filterPosts, setFilterPosts] = useState([])

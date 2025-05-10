@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'https://aim-for-more-server.onrender.com '
 
 function Category() {
   const {id} = useParams();

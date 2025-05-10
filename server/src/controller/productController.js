@@ -3,6 +3,8 @@ import { Category } from "../model/categoryModel.js";
 import { Product } from "../model/productModel.js";
 import crypto from 'crypto'
 import cloudinary from "../midlleware/cloudinary.js";
+import streamifier from 'streamifier';
+
 
 export const getProduct = async (req, res) => {
   try {
@@ -79,9 +81,10 @@ export const create = async (req, res) => {
 
     res.status(200).json({ message: 'Product saved successfully' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error uploading product', error });
+    // console.error('Upload Error:', error);
+    res.status(500).json({ message: 'Error uploading product', error: error.message || error });
   }
+  
 };
 
 

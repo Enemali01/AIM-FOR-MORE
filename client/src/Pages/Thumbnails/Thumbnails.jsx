@@ -7,7 +7,7 @@ import { useAuth } from '../../Components/Hook/authContext';
 import { Link } from 'react-router-dom';
 import FavouriteIcon from '../../Components/FavouriteIcon/FavouriteIcon';
 
-const apiUrl = 'https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com ';
 
 function Thumbnails() {
   const { addItem } = useCart();
@@ -107,7 +107,7 @@ function Thumbnails() {
               <div key={product._id} className="card shadow p-4 rounded relative">
                 <Link to={`/product/${product._id}`}>
                   <img
-                    src={`${apiUrl}/images/${product.file}`}
+                    src={product.file}
                     alt={product.name}
                     className="w-full h-40 object-cover rounded"
                   />

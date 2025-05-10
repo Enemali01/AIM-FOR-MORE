@@ -58,6 +58,7 @@ app.use(cors(corsOptions)); // This enables CORS on all routes
 // }));
 
 
+
 app.use('/api/users', userRoute)
 app.use('/api/blog', blogPostRoute)
 app.use('/api/category', categoryRoute)

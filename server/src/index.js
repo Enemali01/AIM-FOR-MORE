@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(cors({
- origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
+ origin: ['http://localhost:5000', 'https://aim-for-more-498j.vercel.app'],
   credentials: true,
   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
  }));

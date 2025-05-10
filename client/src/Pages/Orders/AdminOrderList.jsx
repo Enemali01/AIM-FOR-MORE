@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more.vercel.app'
+const apiUrl = 'http://localhost:5000'
 
 const AdminOrderList = () => {
   const [orders, setOrders] = useState([])

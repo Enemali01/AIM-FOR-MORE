@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../../Components/Navbar/Navbar'
 
-const apiUrl = 'https://aim-for-more.vercel.app';
+const apiUrl = 'http://localhost:5000';
 
 export default function SearchPage() {
   const [results, setResults] = useState([]);

@@ -7,7 +7,7 @@ import { useAuth } from "../../Components/Hook/authContext";
 import Navbar from "../../Components/Navbar/Navbar";
 
 
-const apiUrl = 'https://aim-for-more.vercel.app'
+const apiUrl = 'http://localhost:5000'
 
 export default function login() {
   const [email, setEmail] = useState('')
@@ -46,7 +46,7 @@ export default function login() {
     <>
     <Navbar/>
 
-    <section className="pt-3">
+    <section className="mx-auto mt-20">
       <Container className="d-flex align-items-center justify-center" style={{minHeight: "70vh"}}>
         <div className="w-100"  style={{maxWidth: "400px"}}>
           <>

@@ -7,7 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { toast } from 'react-toastify'
 import axios from "axios";
 
-const apiUrl = 'https://aim-for-more.vercel.app'
+const apiUrl = 'http://localhost:5000'
 
 function Register() {
   const [email, setEmail] = useState() 
@@ -39,7 +39,7 @@ function Register() {
   return (
     <>
     <Navbar/>
-    <Container className="d-flex align-items-center justify-center px-4 py-3" style={{minHeight: "60vh"}}>
+    <Container className="d-flex align-items-center justify-center px-4 py-3 mx-auto mt-20" style={{minHeight: "60vh"}}>
       <div className="w-100"  style={{maxWidth: "400px"}}>
         <>
         <Card className="shadow-lg">

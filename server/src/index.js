@@ -31,24 +31,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      'https://aim-for-more.vercel.app',
-      'https://aim-for-more-498j.vercel.app'
-    ];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-};
+const allowedOrigins = [
+  'https://aim-for-more.vercel.app',
+  'https://aim-for-more-498j.vercel.app'
+];
 
-
-app.options('*', cors(corsOptions)); // Handle preflight
-app.use(cors(corsOptions)); // This enables CORS on all routes
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+  })
+);
 
 
 // app.use(cors({

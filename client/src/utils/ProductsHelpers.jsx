@@ -55,7 +55,7 @@ export const columns= [
     selector: row => row.file,
     cell: row => (
       <img
-        src={`${apiUrl}/images/${row.file}`}
+        src={row.file}
         alt={row.name}
         className="w-12 h-12 object-cover rounded-md border"
       />

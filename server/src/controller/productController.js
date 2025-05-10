@@ -2,6 +2,7 @@
 import { Category } from "../model/categoryModel.js";
 import { Product } from "../model/productModel.js";
 import crypto from 'crypto'
+import cloudinary from "../midlleware/cloudinary.js";
 
 export const getProduct = async (req, res) => {
   try {
@@ -13,11 +14,54 @@ export const getProduct = async (req, res) => {
 }
 
 
+// export const create = async (req, res) => {
+//   let productIdCounter = crypto.randomUUID() ;
+//   try {
+//     const {id, name, price, quantity, description, category } = req.body;
+//     const file = req.file.filename;
+//     const product = new Product({
+//       id: productIdCounter,
+//       name,
+//       price,
+//       quantity,
+//       category,
+//       description,
+//       file,
+//     })
+//   await product.save();
+  
+//     res.status(200).json({ message: 'Product save succesfuuly' });
+//   } catch (error) {
+//     res.status(500).json(error)
+//   }
+// }
+
+
+
 export const create = async (req, res) => {
-  let productIdCounter = crypto.randomUUID() ;
+  let productIdCounter = crypto.randomUUID();
+
   try {
-    const {id, name, price, quantity, description, category } = req.body;
-    const file = req.file.filename;
+    const { name, price, quantity, description, category } = req.body;
+
+    if (!req.file) {
+      return res.status(400).json({ message: 'No image uploaded' });
+    }
+
+    // Upload image buffer directly to Cloudinary
+    const uploadResult = await new Promise((resolve, reject) => {
+      const stream = cloudinary.uploader.upload_stream(
+        { folder: 'products' },
+        (error, result) => {
+          if (error) return reject(error);
+          resolve(result);
+        }
+      );
+      stream.end(req.file.buffer); // send file buffer from memory storage
+    });
+
+    const imageUrl = uploadResult.secure_url;
+
     const product = new Product({
       id: productIdCounter,
       name,
@@ -25,15 +69,17 @@ export const create = async (req, res) => {
       quantity,
       category,
       description,
-      file,
-    })
-  await product.save();
-  
-    res.status(200).json({ message: 'Product save succesfuuly' });
+      image: imageUrl, // store the Cloudinary image URL instead of filename
+    });
+
+    await product.save();
+
+    res.status(200).json({ message: 'Product saved successfully', product });
   } catch (error) {
-    res.status(500).json(error)
+    res.status(500).json({ error: error.message });
   }
-}
+};
+
 
 export const productById = async (req, res) => {
   try {

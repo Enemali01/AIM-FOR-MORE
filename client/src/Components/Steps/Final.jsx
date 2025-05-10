@@ -1,7 +1,7 @@
 import React from 'react'
 import {useCart} from 'react-use-cart'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 const Details = () => {
   const {isEmpty,items, totalUniqueItems, totalItems, removeItem, cartTotal} = useCart()
   if(isEmpty) return <p className='text-center'>Your cart is Empty</p>
@@ -17,7 +17,7 @@ const Details = () => {
                 <div key={item.id}>
                   <div >
                     <img
-                  src={`${apiUrl}/images/${item.file}`}
+                  src={item.file}
                   className='w-10 object-fit h-10 rounded-3xl hover:scale-110 transition-all item-center justify-center'/>
                   </div>
                   <p>Unit Price: {item.price}</p>

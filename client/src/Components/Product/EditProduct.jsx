@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
   
 function EditProduct() {
   const products = {

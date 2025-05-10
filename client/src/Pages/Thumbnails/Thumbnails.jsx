@@ -99,7 +99,12 @@ function Thumbnails() {
       </div>
 
       {loading ? (
-        <div>Loading...</div>
+        <div className='flex items-center justify-center space-x-2'>
+          <div className='w-5 h-3 border-4 border-emerald-700 border-t-transparent rounded-full animate-spin'></div>
+          <div className='text-emerald-700 font-medium'>
+            Loading products...
+          </div>
+        </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredProducts.length > 0 ? (

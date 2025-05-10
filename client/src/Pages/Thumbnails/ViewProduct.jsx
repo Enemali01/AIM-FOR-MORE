@@ -4,7 +4,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'
 import { useCart } from 'react-use-cart'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function ViewProduct() {
   const {addItem, updateItemQuantity, items} = useCart()
@@ -31,7 +31,7 @@ function ViewProduct() {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
           <div>
           <img 
-          src={`${apiUrl}/images/${productId.file}`}  
+          src={productId.file}  
           alt='productImage'
           className='rounded border w-full'
           />

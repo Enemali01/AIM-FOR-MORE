@@ -30,7 +30,12 @@ app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-const allowedOrigins = ['https://aim-for-more.vercel.app', 'http://localhost:3000'];
+import cors from 'cors';
+
+const allowedOrigins = [
+  'https://aim-for-more.vercel.app',
+  'https://aim-for-more-498j.vercel.app', // your frontend domain
+];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -43,7 +48,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight
 
 
 // app.use(cors({

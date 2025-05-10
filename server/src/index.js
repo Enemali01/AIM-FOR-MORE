@@ -46,6 +46,7 @@ const corsOptions = {
 };
 
 app.options('*', cors(corsOptions)); // Handle preflight
+app.use(cors(corsOptions)); // This enables CORS on all routes
 
 
 // app.use(cors({
@@ -54,7 +55,6 @@ app.options('*', cors(corsOptions)); // Handle preflight
 //   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
 // }));
 
-app.options('*', cors(corsOptions));
 
 app.use('/api/users', userRoute)
 app.use('/api/blog', blogPostRoute)

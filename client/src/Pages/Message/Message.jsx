@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'; 
 import {getColumns } from '../../utils/MessageHelper';
 
-const apiUrl = 'https://aim-for-more.vercel.app/';
+const apiUrl = 'http://localhost:5000';
 
 const Message = () => {
   const [loading, setLoading] = useState(true)

@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'http://localhost:5000'
 
 function Editprofile() {
   const { id } = useParams()

@@ -6,7 +6,7 @@ import * as FaIcon from 'react-icons/fa'
 import { Alert } from 'react-bootstrap'
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'http://localhost:5000'
 
 function EditCategory() {
   const category = {

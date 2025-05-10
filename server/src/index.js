@@ -29,16 +29,22 @@ const __dirname = path.dirname(__filename);
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const allowedOrigins = [
-  'http://localhost:8080',
-  'https://aim-for-more.vercel.app'
-];
 
-app.use(cors({
-  origin: allowedOrigins,
+const allowedOrigins = ['https://aim-for-more.vercel.app', 'http://localhost:3000'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
-  methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
-}));
+};
+
+app.use(cors(corsOptions));
+
 
 
 // app.use(cors({
@@ -47,6 +53,7 @@ app.use(cors({
 //   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
 // }));
 
+app.options('*', cors(corsOptions));
 
 app.use('/api/users', userRoute)
 app.use('/api/blog', blogPostRoute)

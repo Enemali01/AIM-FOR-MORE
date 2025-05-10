@@ -9,7 +9,7 @@ import { Alert } from 'react-bootstrap'
 import { useAuth } from '../../Components/Hook/authContext'
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/';
+const apiUrl = 'http://localhost:5000';
 
 
 const Contact = () => {

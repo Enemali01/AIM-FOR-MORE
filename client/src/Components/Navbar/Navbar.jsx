@@ -101,7 +101,7 @@ export default function Navbar() {
 
         {/* Unified user dropdown (mobile + desktop) */}
         {showDropdown && user && (
-          <div className="absolute right-4 bg-emerald-700 text-white shadow-lg z-50 flex flex-col w-48 xl:top-14 top-20">
+          <div className="absolute right-4 bg-emerald-700 text-white shadow-lg z-50 flex flex-col w-48 xl:top-14 top-14 border-t">
             <Link to="/profile" onClick={() => setShowDropdown(false)} className="px-4 py-2 text-sm hover:bg-teal-600 text-white rounded-md transition-all cursor-pointer text-decoration-none">Profile</Link>
             <Link to="/orders" onClick={() => setShowDropdown(false)} className="px-4 py-2 text-sm hover:bg-teal-600 text-white rounded-md transition-all cursor-pointer text-decoration-none">Orders</Link>
             <Link to="/profile/change-password" onClick={() => setShowDropdown(false)} className="px-4 py-2 text-sm hover:bg-teal-600 text-white rounded-md transition-all cursor-pointer text-decoration-none">Change Password</Link>

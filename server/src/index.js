@@ -29,9 +29,6 @@ const __dirname = path.dirname(__filename);
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-import cors from 'cors';
-
 const allowedOrigins = [
   'https://aim-for-more.vercel.app',
   'https://aim-for-more-498j.vercel.app', // your frontend domain
@@ -70,6 +67,8 @@ app.use('/api/contact', contactRoute)
 app.use('/api/blog-comment', blogComment)
 
 
-app.listen(process.env.PORT, ()=>{
-  console.log(`App is listening on port ${process.env.PORT}`)
-})
+export const handler = serverless(app);
+
+// app.listen(process.env.PORT, ()=>{
+//   console.log(`App is listening on port ${process.env.PORT}`)
+// })

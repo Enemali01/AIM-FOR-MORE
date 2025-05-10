@@ -106,11 +106,11 @@ export const productById = async (req, res) => {
 export const editProduct = async (req, res) => {
   try {
     const id = req.params.id;
-    const { name, price, quantity, description, stars, category } = req.body;
+    const { name, price, quantity, description, category } = req.body;
     const edit = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
     })
-    res.status(200).json({ message: 'Post has been edited Successfull' }).json(edit)
+    res.status(200).json({ message: 'Post has been edited Successfull', edit })
   } catch (error) {
     console.log(error)
   }

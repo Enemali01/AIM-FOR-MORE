@@ -1,7 +1,7 @@
 import React from 'react'
 import {useCart} from 'react-use-cart'
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 const Details = () => {
   const {isEmpty,items, totalUniqueItems, totalItems, removeItem, cartTotal} = useCart()
   if(isEmpty) return <p className='text-center'>Your cart is Empty</p>

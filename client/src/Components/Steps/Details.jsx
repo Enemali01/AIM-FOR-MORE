@@ -24,7 +24,7 @@ const Details = ({ formData, setFormData }) => {
     const email = 'useremail@example.com'; // Use dynamic email from user
 
     try {
-      const response = await axios.post('http://localhost:5000/api/paystack/initialize', {
+      const response = await axios.post('https://aim-for-more-server.onrender.com/api/paystack/initialize', {
         amount, // Amount to be charged
         email,
       });

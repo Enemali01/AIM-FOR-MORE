@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 // import { CartContext } from '../../Components/Hook/ContextProvider'
 
 
-const apiUrl ='http://localhost:5000'
+const apiUrl ='https://aim-for-more-server.onrender.com'
 
 const CartProduct = ({products}) => {
 // const {cart,dispatch} = useContext(CartContext)

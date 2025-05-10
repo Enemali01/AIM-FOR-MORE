@@ -4,7 +4,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'
 import { useCart } from 'react-use-cart'
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function ViewProduct() {
   const {addItem, updateItemQuantity, items} = useCart()

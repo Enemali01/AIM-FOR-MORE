@@ -7,7 +7,7 @@ import { useAuth } from "../../Components/Hook/authContext";
 import Navbar from "../../Components/Navbar/Navbar";
 
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 export default function login() {
   const [email, setEmail] = useState('')

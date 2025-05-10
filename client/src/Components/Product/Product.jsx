@@ -5,7 +5,7 @@ import { columns, ProductButtons } from '../../utils/ProductsHelpers'
 import axios from 'axios'
 import { FaPencilAlt, FaTrash } from 'react-icons/fa'
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function Product() {
 

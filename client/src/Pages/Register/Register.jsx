@@ -7,7 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { toast } from 'react-toastify'
 import axios from "axios";
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function Register() {
   const [email, setEmail] = useState() 

@@ -5,7 +5,7 @@ import { columns, AdminButtons } from '../../utils/AdminHelpers'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function UserList() {
   const [adminUsers, setAdminUsers] = useState([])

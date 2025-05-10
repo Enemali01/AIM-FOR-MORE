@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import {Alert } from 'react-bootstrap'
 import * as FaIcon from 'react-icons/fa'
 
-const apiUrl = 'http://localhost:5000'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function EditPost() {
   const post = {

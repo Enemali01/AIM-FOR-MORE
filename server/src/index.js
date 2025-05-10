@@ -67,7 +67,7 @@ app.use('/api/contact', contactRoute)
 app.use('/api/blog-comment', blogComment)
 
 
-export const handler = serverless(app);
+export default app;
 
 // app.listen(process.env.PORT, ()=>{
 //   console.log(`App is listening on port ${process.env.PORT}`)

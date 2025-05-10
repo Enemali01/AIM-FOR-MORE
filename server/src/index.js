@@ -31,11 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(cors({
- origin: ['https://aim-for-more-server.onrender.com', 'https://aim-for-more-498j.vercel.app'],
-  credentials: true,
-  methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
- }));
-
+  origin: 'https://aim-for-more-client.onrender.com',
+  credentials: true, 
+   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
+}));
 
 
 app.use('/api/users', userRoute)

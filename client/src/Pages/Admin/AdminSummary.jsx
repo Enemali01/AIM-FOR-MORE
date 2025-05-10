@@ -4,7 +4,7 @@ import { FaBlog, FaCheckCircle, FaJediOrder, FaUser } from 'react-icons/fa'
 import axios from 'axios';
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function AdminSummary() {
 

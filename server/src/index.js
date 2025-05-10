@@ -29,13 +29,14 @@ const __dirname = path.dirname(__filename);
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const allowedOrigins = [
-  'https://aim-for-more.vercel.app',
-  'https://aim-for-more-498j.vercel.app', // your frontend domain
-];
+
 
 const corsOptions = {
   origin: function (origin, callback) {
+    const allowedOrigins = [
+      'https://aim-for-more.vercel.app',
+      'https://aim-for-more-498j.vercel.app'
+    ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -44,6 +45,7 @@ const corsOptions = {
   },
   credentials: true,
 };
+
 
 app.options('*', cors(corsOptions)); // Handle preflight
 app.use(cors(corsOptions)); // This enables CORS on all routes
@@ -69,6 +71,4 @@ app.use('/api/blog-comment', blogComment)
 
 export default app;
 
-// app.listen(process.env.PORT, ()=>{
-//   console.log(`App is listening on port ${process.env.PORT}`)
-// })
+

@@ -1,6 +1,6 @@
 import { AdminModel } from "../model/adminModel.js"
 import { UserModel } from "../model/userModel.js"
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 const PASSWORD_HASH_SALT_ROUNDS = 8;
 
 export const addAdmin = async(req,res) => {

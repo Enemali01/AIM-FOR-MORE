@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 function View() {
 
   const [user, setUser] = useState(null)

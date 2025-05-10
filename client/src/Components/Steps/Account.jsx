@@ -5,7 +5,7 @@ import { useAuth } from '../Hook/authContext'
 
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 
 
 const Account = () => {

@@ -4,7 +4,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'
 import { useCart } from 'react-use-cart'
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 
 function ViewProduct() {
   const {addItem, updateItemQuantity, items} = useCart()

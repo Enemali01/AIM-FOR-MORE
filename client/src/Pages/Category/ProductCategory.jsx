@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from 'react-use-cart';
 
-const apiUrl = 'https://aim-for-more.vercel.app/';
+const apiUrl = 'https://aim-for-more.vercel.app';
 
 const ProductCategory = () => {
   const { id } = useParams();

@@ -6,7 +6,7 @@ import { Alert } from 'react-bootstrap'
 import { toast } from 'react-toastify'
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 
 
 export default function AddProducts() {

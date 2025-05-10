@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
   
 function EditProduct() {
   const products = {

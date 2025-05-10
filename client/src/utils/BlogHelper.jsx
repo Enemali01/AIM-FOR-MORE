@@ -3,7 +3,7 @@ import * as FaIcon from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 export const colums = [
     {
       name: 'SN',
@@ -34,7 +34,7 @@ export const colums = [
       selector: (row) => row.file,
       cell:(row)=> (
         <div className='align-items-center d-flex rounded'>
-          <img src={`https://aim-for-more.vercel.app//images/${row.file}`}  style={{width: '38px', height:'38px'}}/>
+          <img src={`https://aim-for-more.vercel.app/images/${row.file}`}  style={{width: '38px', height:'38px'}}/>
         </div>
       ),
       center:'true',

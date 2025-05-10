@@ -7,7 +7,7 @@ import { useAuth } from "../../Components/Hook/authContext";
 import Navbar from "../../Components/Navbar/Navbar";
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 
 export default function login() {
   const [email, setEmail] = useState('')

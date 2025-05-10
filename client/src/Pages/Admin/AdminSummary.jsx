@@ -4,7 +4,7 @@ import { FaBlog, FaCheckCircle, FaJediOrder, FaUser } from 'react-icons/fa'
 import axios from 'axios';
 
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 
 function AdminSummary() {
 

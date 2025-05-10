@@ -7,7 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { toast } from 'react-toastify'
 import axios from "axios";
 
-const apiUrl = 'https://aim-for-more.vercel.app/'
+const apiUrl = 'https://aim-for-more.vercel.app'
 
 function Register() {
   const [email, setEmail] = useState() 

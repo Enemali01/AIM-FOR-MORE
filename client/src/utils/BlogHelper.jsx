@@ -3,7 +3,7 @@ import * as FaIcon from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 export const colums = [
     {
       name: 'SN',

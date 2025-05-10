@@ -30,16 +30,6 @@ app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// const corsOptions = {
-//   origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
-//   credentials: true,
-// };
-
-// app.use(cors(corsOptions));
-// app.options('*', cors(corsOptions));
-
-
-
 app.use(cors({
  origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
   credentials: true,
@@ -59,4 +49,6 @@ app.use('/api/contact', contactRoute)
 app.use('/api/blog-comment', blogComment)
 
 
-
+app.listen(process.env.PORT, ()=>{
+  console.log(`App is listening on port ${process.env.PORT}`)
+})

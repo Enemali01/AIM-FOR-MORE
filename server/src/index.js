@@ -30,19 +30,14 @@ app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+const corsOptions = {
+  origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
+  credentials: true,
+};
 
-const allowedOrigins = [
-  'https://aim-for-more.vercel.app',
-  'https://aim-for-more-498j.vercel.app'
-];
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-  })
-);
 
 
 // app.use(cors({

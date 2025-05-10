@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Heroblogimg from '../../assets/image/london2.jpeg'
 import Footer from '../../Components/Footer/Footer'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function Post() {
  

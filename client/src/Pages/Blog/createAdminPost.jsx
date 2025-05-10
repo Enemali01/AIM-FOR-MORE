@@ -6,7 +6,7 @@ import * as FaIcon from 'react-icons/fa'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com ';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 export default function createAdminPost() {
 

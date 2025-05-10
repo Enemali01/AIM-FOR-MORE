@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { colums , BlogButton } from '../../utils/BlogHelper'
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com '
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 function BlogDashboard() {
 
   const [filterPosts, setFilterPosts] = useState([])

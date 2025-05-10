@@ -98,7 +98,7 @@ import axios from 'axios';
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
 
-const apiUrl = 'https://aim-for-more-server.onrender.com ';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 const Cart = ({ userId }) => {
   const { totalUniqueItems, items, updateItemQuantity, cartTotal } = useCart();

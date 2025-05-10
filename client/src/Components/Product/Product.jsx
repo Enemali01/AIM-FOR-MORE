@@ -84,70 +84,7 @@ const filterProduct = async(e) => {
       
       </section>
     }
-      {/* <section>
-        <div className='relative flex flex-col w-full h-full overflow-scroll bg-white shadow-md rounded-xl'>
-        <table className='w-80 text-right table-auto min-w-max py-2 px-2'>
-          <thead>
-            <tr>
-              <th className='px-3 p-3 text-center border-b border-blue-gray-100 bg-blue-gray-50'>SN
-              </th>
-              <th className='px-3 p-3  text-center border-b border-blue-gray-100 bg-blue-gray-50'>Product Name
-              </th>
-              <th className='px-3 p-3  text-center border-b border-blue-gray-100 bg-blue-gray-50'>Description
-              </th>
-              <th className='px-3 p-3 border-b border-blue-gray-100 bg-blue-gray-50'>Product Image
-              </th>
-              <th className='px-3 p-3 border-b border-blue-gray-100 bg-blue-gray-50'>Star
-              </th>
-              <th className='px-3 p-3 border-b border-blue-gray-100 bg-blue-gray-50'>Category
-              </th>
-              <th className='px-3 p-3 justify-center text-center border-b border-blue-gray-100 bg-blue-gray-50'>Action
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {products && products.length > 0 ? (
-              products.map((product, index) => (
-                <tr key={product.id}>
-                  <td className=' text-center border-b border-blue-gray-100 bg-blue-gray-50'>
-                     {index + 1} 
-                  </td>
-                  <td className='text-center border-b'>
-                     {product.name}
-                  </td>
-                  <td className='text-center border-b border-blue-gray-100 bg-blue-gray-50'>
-                    {product.description.length > 100 ? `${product.description.substring(0, 10)}....` : product.description}
-                  </td>
-                  <td className='p-1 justify-center items-center text-center'>
-                    <img className='w-10 h-10 mx-auto rounded'
-                      src={`${apiUrl}/images/${product.file}`}
-                      alt='blopost'
-                    />
-                  </td>
-                  <td className='text-center border-b'>
-                     {product.stars}
-                  </td>
-                  <td className='text-center border-b'>
-                     {product.category}
-                  </td>
-                  <td className='justify-between space-x-2 text-center border-b border-blue-gray-100 bg-blue-gray-50 block flex'>
-                    <Link to={`/dashboard/product/edit-product/${product._id}`} className='text-decoration-none '>
-                      <span><FaPencilAlt style={{ color: 'green' }} /></span>
-                    </Link>
-
-                    <button type='submit' className=' flex items-center block  text-gray ' onClick={() => handleTrash()}><FaTrash style={{ color: 'red' }} /></button>
-                  </td>
-
-                </tr>
-              ))
-            ) : (
-              <p className='items-center'>There are no records to display</p>
-            )}
-
-          </tbody>
-        </table>
-        </div>
-      </section> */}
+    
     </>
   )
 }

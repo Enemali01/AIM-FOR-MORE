@@ -54,7 +54,7 @@ const Contact = () => {
     <> 
     <Navbar/>
     <section>
-     <div className='flex flex-col md:flex-row justify-between space-x-10 mt-8 container'>
+     <div className='flex flex-col md:flex-row justify-between space-x-10 mt-15 container'>
         <div className='md:w-2/3 '>
             <div className='shadow-xl border'>
               <img src={ConImage} alt='contact image' className='object-contain hidden md:block'/>

@@ -36,47 +36,51 @@ export const getProduct = async (req, res) => {
 //   }
 // }
 
-
-
 export const create = async (req, res) => {
-  let productIdCounter = crypto.randomUUID();
+  const productIdCounter = crypto.randomUUID();
 
   try {
     const { name, price, quantity, description, category } = req.body;
 
     if (!req.file) {
-      return res.status(400).json({ message: 'No image uploaded' });
+      return res.status(400).json({ message: 'No image file uploaded' });
     }
 
-    // Upload image buffer directly to Cloudinary
-    const uploadResult = await new Promise((resolve, reject) => {
-      const stream = cloudinary.uploader.upload_stream(
-        { folder: 'products' },
-        (error, result) => {
-          if (error) return reject(error);
-          resolve(result);
-        }
-      );
-      stream.end(req.file.buffer); // send file buffer from memory storage
-    });
+    // Upload image to Cloudinary using memory stream
+    const streamUpload = () => {
+      return new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          { folder: 'products' }, 
+          (error, result) => {
+            if (result) {
+              resolve(result);
+            } else {
+              reject(error);
+            }
+          }
+        );
+        streamifier.createReadStream(req.file.buffer).pipe(stream);
+      });
+    };
 
-    const imageUrl = uploadResult.secure_url;
+    const result = await streamUpload(); 
 
     const product = new Product({
       id: productIdCounter,
       name,
       price,
       quantity,
-      category,
       description,
-      image: imageUrl, // store the Cloudinary image URL instead of filename
+      category,
+      file: result.secure_url, 
     });
 
     await product.save();
 
-    res.status(200).json({ message: 'Product saved successfully', product });
+    res.status(200).json({ message: 'Product saved successfully' });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Error uploading product', error });
   }
 };
 

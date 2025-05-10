@@ -57,7 +57,7 @@ const About = () => {
   return (
     <>
     <Navbar/>
-    <div className="px-4 py-10 md:px-20 bg-gray-50 container">
+    <div className="px-4 py-10 md:px-20 bg-gray-50 container mt-10">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}

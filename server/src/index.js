@@ -46,7 +46,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-
 // app.use(cors({
 //   credentials: true,
 //   origin: 'https://aim-for-more-498j.vercel.app/',

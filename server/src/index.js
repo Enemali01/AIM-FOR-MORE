@@ -26,25 +26,25 @@ app.use(express.json());
 app.use(cookieParser());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// app.use(express.static('public'));
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
-const corsOptions = {
-  origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
-
-
-// app.use(cors({
+// const corsOptions = {
+//   origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
 //   credentials: true,
-//   origin: 'https://aim-for-more-498j.vercel.app/',
-//   methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
-// }));
+// };
+
+// app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
+
+
+
+app.use(cors({
+ origin: ['https://aim-for-more.vercel.app', 'https://aim-for-more-498j.vercel.app'],
+  credentials: true,
+  methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
+ }));
 
 
 
@@ -58,10 +58,5 @@ app.use('/api/order', orderRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/blog-comment', blogComment)
 
-app.get('/api/ping', (req, res) => {
-  res.status(200).json({ message: 'pong' });
-});
-
-export default app;
 
 

@@ -26,8 +26,8 @@ app.use(express.json());
 app.use(cookieParser());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 
 const corsOptions = {
@@ -58,6 +58,9 @@ app.use('/api/order', orderRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/blog-comment', blogComment)
 
+app.get('/api/ping', (req, res) => {
+  res.status(200).json({ message: 'pong' });
+});
 
 export default app;
 

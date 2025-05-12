@@ -1,30 +1,8 @@
-// import Footer from "../Components/Footer/Footer"
-// import Navbar from "../Components/Navbar/Navbar"
-// import AboutImg from '../image/cop-img6.jpeg'
-
-
-// function About() {
-//   return (
-//     <>
-//     <Navbar/>
-   
-//     <section>
-//       <div>
-//         <img src={AboutImg} className='w-full object-fit' /> 
-//       </div>
-//     </section>
-
-//     <Footer/>
-//     </>
-//   )
-// }
-
-// export default About
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaUsers, FaShoppingCart, FaPhoneAlt, FaRocket, FaStore, FaChartLine, FaAward } from 'react-icons/fa';
 import Navbar from '../Components/Navbar/Navbar';
-
+import Footer from '../Components/Footer/Footer'
 
 const timelineData = [
   {
@@ -136,6 +114,7 @@ const About = () => {
         </div>
       </motion.div>
     </div>
+    <Footer/>
     </>
   );
 };

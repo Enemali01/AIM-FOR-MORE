@@ -5,7 +5,6 @@ import crypto from 'crypto'
 import cloudinary from "../midlleware/cloudinary.js";
 import streamifier from 'streamifier';
 
-
 export const getProduct = async (req, res) => {
   try {
     const products = await Product.find().populate('category');

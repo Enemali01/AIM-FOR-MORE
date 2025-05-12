@@ -68,7 +68,7 @@ function Register() {
                       <Form.Group id="phone">
                       <Form.Label>Phone</Form.Label>
                       <Form.Control 
-                      type="number"
+                      type="phone"
                       name="phone"
                       required 
                       onChange={e => setPhone(e.target.value)}

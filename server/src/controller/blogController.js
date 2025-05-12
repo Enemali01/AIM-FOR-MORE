@@ -1,7 +1,6 @@
 import { Blog } from "../model/blogModel.js";
 import streamifier from 'streamifier';
-
-
+import cloudinary from "../midlleware/cloudinary.js";
 
 export const createPost = async (req, res) => {
   try {
@@ -39,7 +38,8 @@ export const createPost = async (req, res) => {
     await post.save();
     res.status(200).json({ message: "Blog post saved Successfully" });
   } catch (error) {
-    res.status(500).json({ message: 'Server Error as a result of a Wrong file selected', error: error.message })
+    console.log(error)
+    // res.status(500).json({ message: 'Server Error as a result of a Wrong file selected', error: error.message })
   }
 }
 

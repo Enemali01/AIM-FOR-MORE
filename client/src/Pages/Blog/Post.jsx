@@ -59,7 +59,7 @@ function Post() {
         return   <div className='card rounded-md shadow-xl'>
         <div className='py-1 px-1 flex flex-col'>
           <div className='rounded-xl overflow-hidden'>
-          <Link to={`/blog/${post._id}`}><img  className='w-full h-55' src={`${apiUrl}/images/${post.file}`} alt='blopost'/></Link>
+          <Link to={`/blog/${post._id}`}><img  className='w-full h-55' src={post.file} alt='blopost'/></Link>
           </div>
           <h6 className='text-2xl md:text-3xl font-medium mt-2'>{post.title}</h6>
           <p className='text-1xl md:text-1xl mt-1'>{post.description.length > 100 ? `${post.description.substring(0, 80)}....` : post.description}</p>

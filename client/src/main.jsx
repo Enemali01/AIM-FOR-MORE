@@ -10,14 +10,15 @@ import { BrowserRouter } from 'react-router-dom'
 import {CartProvider} from 'react-use-cart'
 
 
-// Define a custom key for react-use-cart
-const CUSTOM_CART_KEY = 'custom-cart'
+// // Define a custom key for react-use-cart
+// const CUSTOM_CART_KEY = 'custom-cart'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
   <BrowserRouter>
   <AuthContext>
-    <CartProvider localStorageKey="custom-cart">
+  <CartProvider storage={typeof window !== 'undefined' ? localStorage : null} storageKey="custom-cart">
+
     <App />
     <ToastContainer 
          position='bottom-right'

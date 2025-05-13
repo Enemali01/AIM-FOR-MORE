@@ -49,17 +49,22 @@ function ViewBlog() {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className='flex items-center justify-center space-x-2'>
+  <div className='w-5 h-3 border-4 border-emerald-700 border-t-transparent rounded-full animate-spin'></div>
+  <div className='text-emerald-700 font-medium mx-auto'>
+    Loading...
+  </div>
+</div>;
 
   return (
     <>
       <Navbar />
       {posts ? (
         <section>
-          <div className='flex shadow-lg max-w-3xl mx-auto mt-10 bg-white rounded-md shadow-lg'>
+          <div className='flex shadow-lg max-w-3xl mx-auto mt-15 bg-white rounded-md shadow-lg'>
             <div className=''>
               <div className='rounded-xl overflow-hidden'>
-                <img className='w-full' src={`${apiUrl}/images/${posts.file}`} alt='Blog Post' />
+                <img className='w-full' src={posts.file} alt='Blog Post' />
               </div>
               <h2 className='text-success py-1 px-2'>{posts.title}</h2>
               <p className='text-1xl md:text-1xl mt-1'>{posts.description}</p>

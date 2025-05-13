@@ -23,7 +23,7 @@ const CartProduct = ({products}) => {
   return (
     <div className='flex  mt-3'>
         <img 
-        src={`${apiUrl}/images/${products.file}`} 
+        src={products.file} 
         className='w-10 object-fit h-10 rounded-3xl hover:scale-110 transition-all'
         alt={products.name}
         />

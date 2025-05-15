@@ -33,13 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
    origin: 
-<<<<<<< HEAD
   //  'http://localhost:8080',
    'https://aim-for-more-client.onrender.com',
-=======
-  // 'http://localhost:8080',
- 'https://aim-for-more-client.onrender.com',
->>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
   credentials: true, 
    methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
 }));

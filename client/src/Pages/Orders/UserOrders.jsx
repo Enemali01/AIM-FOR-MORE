@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../Components/Hook/authContext';
@@ -34,7 +30,6 @@ const UserOrders = () => {
     fetchOrders();
   }, [user]);
 
-<<<<<<< HEAD
   return (
     <>
       <Navbar />
@@ -44,27 +39,6 @@ const UserOrders = () => {
         <section>
           <div className="max-w-5xl mx-auto p-6 mb-30">
             <h2 className="text-2xl font-bold mb-6 text-emerald-700">Your Orders</h2>
-=======
-  // if (loading) return <div className="text-center mt-8 text-lg text-gray-500">Loading orders...</div>;
-  if (error) return <div className="text-center mt-8 text-red-500">{error}</div>;
-  if (orders.length === 0) return <div className="text-center mt-8 text-gray-600">You have no completed orders yet.</div>;
-
-  return (
-    <>
-      <Navbar />
-      {loading ? <div className="text-center mt-8 mx-auto text-lg text-gray-500">Loading orders...</div> : 
-      <section>
-        <div className="max-w-5xl mx-auto p-6 mb-30">
-          <h2 className="text-2xl font-bold mb-6 text-emerald-700">Completed Orders</h2>
-          <div className="grid gap-6">
-            {orders.map((order) => (
-              <div key={order._id} className="bg-white border border-gray-200 rounded-lg p-6 shadow hover:shadow-md transition-all">
-                <div className="mb-2 text-sm text-gray-500">Order ID: <span className="text-gray-800 font-medium">{order._id}</span></div>
-                <div className="text-sm text-gray-500 mb-1">Status: <span className="text-green-600 font-semibold capitalize">{order.status}</span></div>
-                <div className="text-sm text-gray-500 mb-1">Total Items: <span className="text-gray-800">{order.items.length}</span></div>
-                <div className="text-sm text-gray-500 mb-1">Total Bill: <span className="text-gray-800 font-medium">₦{order.bill?.toLocaleString()}</span></div>
-                <div className="text-sm text-gray-500 mb-1">Date: <span className="text-gray-800">{new Date(order.createdAt).toLocaleDateString()}</span></div>
->>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
 
             {['pending', 'confirmed', 'shipped', 'completed'].map((status) => (
               <div key={status}>
@@ -101,14 +75,8 @@ const UserOrders = () => {
               </div>
             ))}
           </div>
-<<<<<<< HEAD
         </section>
       )}
-=======
-        </div>
-      </section>
-       }
->>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
       <Footer />
     </>
   );

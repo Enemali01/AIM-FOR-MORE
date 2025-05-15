@@ -53,7 +53,7 @@ export default function SearchPage() {
                 <div key={product._id} className="border p-4 rounded">
                   <Link to={`/product/${product._id}`}>
                     <img
-                      src={`${apiUrl}/images/${product.file}`}
+                      src={product.file}
                       alt={product.name}
                       className="w-full h-40 object-cover rounded"
                     />

@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Modal } from 'react-bootstrap'
 
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 function Profile() {
 
   const { user } = useAuth()

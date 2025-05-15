@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'; 
 import {getColumns } from '../../utils/MessageHelper';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 const Message = () => {
   const [loading, setLoading] = useState(true)

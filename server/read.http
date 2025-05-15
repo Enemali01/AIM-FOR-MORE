@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-GET http://localhost:5000https://aim-for-more-server.onrender.com/verify"
+GET https://aim-for-more-server.onrender.com/verify"
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2MzMGY4N2MyYjM1MDRiYTBkYzg5MzgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTE2NTUyMCwiZXhwIjoxNzQyMDI5NTIwfQ.3MWUgIYSwHUCQ_grbpryGHoCB7E48ASg1NAkeyoxBdg
 
 
-POST http://localhost:5000https://aim-for-more-server.onrender.com/login"
+POST https://aim-for-more-server.onrender.com/login"
 =======
 GET https://aim-for-more-server.onrender.com /verify"
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2MzMGY4N2MyYjM1MDRiYTBkYzg5MzgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTE2NTUyMCwiZXhwIjoxNzQyMDI5NTIwfQ.3MWUgIYSwHUCQ_grbpryGHoCB7E48ASg1NAkeyoxBdg

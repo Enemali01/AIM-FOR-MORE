@@ -5,7 +5,7 @@
 // import { Link } from 'react-router-dom';
 // import { useAuth } from '../../Components/Hook/authContext';
 
-// const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+// const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 <<<<<<< HEAD
 // const Cart = () => {
@@ -204,7 +204,7 @@
 // import { Link } from 'react-router-dom';
 // import { useAuth } from '../../Components/Hook/authContext';
 
-// const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+// const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 // const Cart = () => {
 //   const { user } = useAuth();
@@ -346,7 +346,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../Components/Hook/authContext';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 const Cart = () => {
   const { user } = useAuth();

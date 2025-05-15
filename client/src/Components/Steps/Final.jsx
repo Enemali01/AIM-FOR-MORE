@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useAuth } from '../Hook/authContext'
 
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 const Details = () => {
 const { user } = useAuth();
   const [cartItems, setCartItems] = useState([]);

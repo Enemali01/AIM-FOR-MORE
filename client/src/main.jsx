@@ -7,17 +7,13 @@ import 'react-toastify/dist/ReactToastify.css'
 import AuthContext from './Components/Hook/authContext.jsx'
 import { ToastContainer } from 'react-toastify'
 import { BrowserRouter } from 'react-router-dom'
-// import {CartProvider} from 'react-use-cart'
 
-
-// Define a custom key for react-use-cart
-// const CUSTOM_CART_KEY = 'custom-cart'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
   <BrowserRouter>
   <AuthContext>
-    {/* <CartProvider localStorageKey="custom-cart"> */}
+   
     <App />
     <ToastContainer 
          position='bottom-right'
@@ -30,7 +26,7 @@ createRoot(document.getElementById('root')).render(
          pauseOnHover
          theme="light"
          />
-  {/* </CartProvider> */}
+  
   </AuthContext>
   </BrowserRouter>
   </StrictMode>,

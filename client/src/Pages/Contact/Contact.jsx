@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Alert } from 'react-bootstrap';
 import { useAuth } from '../../Components/Hook/authContext';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 const Contact = () => {
   const [lastname, setLastname] = useState('');

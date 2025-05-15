@@ -8,7 +8,7 @@ import { useAuth } from '../../Components/Hook/authContext';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 const UserOrders = () => {
   const { user } = useAuth();

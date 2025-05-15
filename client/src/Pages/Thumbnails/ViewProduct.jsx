@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { useAuth } from '../../Components/Hook/authContext'
 
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 function ViewProduct() {
   const {user} = useAuth()

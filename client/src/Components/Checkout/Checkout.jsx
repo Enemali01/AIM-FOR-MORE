@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useAuth } from '../Hook/authContext';
 import { toast } from 'react-toastify';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 const Checkout = () => {
   const { user } = useAuth();
   const [cart, setCart] = useState(null);

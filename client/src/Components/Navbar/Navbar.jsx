@@ -5,9 +5,7 @@ import * as FaIcon from 'react-icons/fa';
 import { IoIosCloseCircle, IoMdArrowDropdown, IoMdClose } from 'react-icons/io';
 import logo from '../../assets/image/Aim-logo.jpg';
 import { useAuth } from '../Hook/authContext';
-import axios from 'axios';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,26 +13,8 @@ export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const { user, logout } = useAuth();
-  const [cartCount, setCartCount] = useState(0)
-
+ 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user && user.token) {
-      axios.get(`${apiUrl}/api/cart/count`, {
-        headers:{
-          Authorization: `Bearer ${user.token}`,
-        }
-      })
-        .then(response => {
-          console.log('Cart count fetched:', response.data.itemCount);
-          setCartCount(response.data.itemCount);
-        })
-        .catch(error => {
-          console.error('Error fetching cart count:', error);
-        });
-    }
-  }, [user]);
 
 
 
@@ -103,11 +83,11 @@ export default function Navbar() {
             <NavLink to="/cart" className="relative">
               <FaIcon.FaShoppingCart className="text-xl text-white" />
 
-              {cartCount > 0 && (
+             
                 <span className="absolute top-[-5px] right-[-10px] bg-red-600 w-5 h-5 flex justify-center items-center rounded-full text-white text-xs">
-                  {cartCount}
+                 
                 </span>
-              )}
+              
             </NavLink>
 
             {/* Mobile menu toggle */}

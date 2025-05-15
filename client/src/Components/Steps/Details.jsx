@@ -25,7 +25,7 @@ const Details = ({ formData, setFormData }) => {
 
     try {
 <<<<<<< HEAD
-      const response = await axios.post('http://localhost:5000https://aim-for-more-server.onrender.com/api/paystack/initialize', {
+      const response = await axios.post('https://aim-for-more-server.onrender.com/api/paystack/initialize', {
 =======
       const response = await axios.post('https://aim-for-more-server.onrender.com /api/paystack/initialize', {
 >>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e

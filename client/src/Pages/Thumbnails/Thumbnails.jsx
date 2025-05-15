@@ -7,7 +7,7 @@
 // import { Link } from 'react-router-dom';
 // import FavouriteIcon from '../../Components/FavouriteIcon/FavouriteIcon';
 
-// const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+// const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 // function Thumbnails() {
 //   const { addItem } = useCart();
@@ -180,7 +180,7 @@ import { useAuth } from '../../Components/Hook/authContext';
 import { Link } from 'react-router-dom';
 import FavouriteIcon from '../../Components/FavouriteIcon/FavouriteIcon';
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 function Thumbnails() {
   const { user } = useAuth();

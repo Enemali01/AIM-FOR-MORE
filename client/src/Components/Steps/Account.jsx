@@ -5,7 +5,7 @@ import { useAuth } from '../Hook/authContext'
 
 
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
+const apiUrl = 'https://aim-for-more-server.onrender.com'
 
 
 const Account = () => {

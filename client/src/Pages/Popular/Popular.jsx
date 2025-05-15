@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 // Modal for adding a popular product
 const AddPopularProductModal = ({ isOpen, onClose }) => {

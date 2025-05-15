@@ -125,7 +125,7 @@ import { Link, Links } from 'react-router-dom'
 import { FaStar, FaShippingFast, FaHeadset } from 'react-icons/fa'; // Add this at the top of your Home.jsx
 
 
-const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
+const apiUrl = 'https://aim-for-more-server.onrender.com';
 
 function Home() {
   const [categories, setCategories] = useState([])

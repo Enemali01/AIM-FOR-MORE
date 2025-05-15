@@ -45,7 +45,7 @@ function Post() {
        <Navbar />
 
   <section>
-    <div className='mt-15'>
+    <div className='mt-10'>
       <img src={Heroblogimg} alt='blog-hero'  className='h-10 w-full' style={{height:'500px'}}/>
       <h1 className=' text-5xl absolute right-1/2 top-1/3 bottom text-success translate-y-1/2 translate-x-1/2'>Blog post</h1>
     </div>

@@ -53,7 +53,7 @@ const Contact = () => {
         <div className="mt-20 container mx-auto px-4 flex flex-col md:flex-row items-start gap-10">
           
           {/* Image Side */}
-          <div className="md:w-1/2 rounded-xl overflow-hidden shadow-lg bg-white">
+          <div className="md:w-1/2 rounded-xl block md:hidden overflow-hidden shadow-lg bg-white">
             <img src={ConImage} alt="contact" className="w-full h-full object-cover" />
           </div>
 

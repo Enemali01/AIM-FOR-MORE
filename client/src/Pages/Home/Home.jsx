@@ -1,115 +1,3 @@
-// import React from 'react'
-// import Navbar from '../../Components/Navbar/Navbar'
-// import {Container, Row, Col} from 'react-bootstrap'
-// import Search from '../../Components/Search/Search'
-// import Slider from '../../Components/Slider/Slider'
-// import Thumbnails from '../Thumbnails/Thumbnails'
-// import What from '../../Components/Services/What'
-// import Services from '../../Components/Services/Services'
-// import Frequent from '../../Components/Frequent/Frequent'
-// import Footer from '../../Components/Footer/Footer'
-
-
-// function Home() {
-
-//   return (
-//     <>
-//     <Navbar/>
-//     <Slider/>
-//     <section>
-//       <Thumbnails/>
-//       <What/>
-//       <Services/>
-//       <Frequent/>
-//       <Footer/>
-//     </section>
-
-//     </>
-//   )
-// }
-
-// export default Home
-
-
-// import React, { useState } from 'react';
-// import Navbar from '../../Components/Navbar/Navbar';
-// import { Container, Row, Col } from 'react-bootstrap';
-// import Slider from '../../Components/Slider/Slider';
-// import Thumbnails from '../Thumbnails/Thumbnails';
-// import What from '../../Components/Services/What';
-// import Services from '../../Components/Services/Services';
-// import Frequent from '../../Components/Frequent/Frequent';
-// import Footer from '../../Components/Footer/Footer';
-// import Testimonial from '../../Components/Testimonial/Testimonial';
-
-// function Home() {
-//   const [showAllProducts, setShowAllProducts] = useState(false);
-
-//   const toggleShowAllProducts = () => {
-//     setShowAllProducts(prevState => !prevState);
-//   };
-
-//   return (
-//     <>
-//       <Navbar />
-
-//       {/* Slider Section */}
-//       <Slider />
-
-//       {/* Main Content Section */}
-//       <section className="bg-gray-50 py-10">
-//         <Container>
-//           <Row className="justify-content-center">
-//             <Col lg={10} className="text-center">
-//               <h2 className="text-3xl font-bold text-emerald-800 mb-4">Discover Amazing Products and Services</h2>
-//               <p className="text-lg text-gray-600 mb-6">Explore our diverse offerings that suit all your needs.</p>
-//             </Col>
-//           </Row>
-
-//           {/* Thumbnails Section - Limited to 3 products initially */}
-//           <Row className="mb-12">
-//             <Col lg={12}>
-//               <Thumbnails limit={showAllProducts ? 100 : 3} />
-
-//             </Col>
-//           </Row>
-
-//           {/* What We Offer Section */}
-//           <Row className="mb-12">
-//             <Col lg={12}>
-//               <What />
-//             </Col>
-//           </Row>
-
-//           {/* Services Section */}
-//           <Row className="mb-12">
-//             <Col lg={12}>
-//               <Services />
-//             </Col>
-//           </Row>
-
-//           {/* Frequently Asked Questions */}
-//           <Row className="mb-12">
-//             <Col lg={12}>
-//               <Frequent />
-//             </Col>
-//           </Row>
-
-//           {/* Customer Testimonials Section with Slider */}
-//          <Testimonial/>
-//         </Container>
-//       </section>
-
-//       {/* Footer Section */}
-//       <Footer />
-//     </>
-//   );
-// }
-
-// export default Home;
-
-
-
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -122,7 +10,8 @@ import Footer from '../../Components/Footer/Footer'
 import Testimonial from '../../Components/Testimonial/Testimonial'
 import axios from 'axios'
 import { Link, Links } from 'react-router-dom'
-import { FaStar, FaShippingFast, FaHeadset } from 'react-icons/fa'; // Add this at the top of your Home.jsx
+import { FaStar, FaShippingFast, FaHeadset } from 'react-icons/fa';
+import heroImg from '../../assets/image/cop-img10.jpeg'
 
 
 const apiUrl = 'https://aim-for-more-server.onrender.com';
@@ -160,7 +49,8 @@ function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-screen" style={{ backgroundImage: 'url(../src/assets/cop-img10.jpeg)' }}>
+      <section className="relative bg-cover bg-center h-screen" style={{ backgroundImage: 'url(../../../cop-img10.jpeg)' }}>
+      <img src={heroImg} alt='heroImg' />
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center text-white px-4 py-24">
           <h1 className="text-5xl font-bold mb-4">Welcome to Our E-commerce Store</h1>

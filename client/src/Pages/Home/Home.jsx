@@ -49,8 +49,8 @@ function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-screen">
-      <img src={heroImg} alt='heroImg' />
+      <section>
+      <img src={heroImg} alt='heroImg' className="relative bg-cover bg-center h-screen" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center text-white px-4 py-24">
           <h1 className="text-5xl font-bold mb-4">Welcome to Our E-commerce Store</h1>

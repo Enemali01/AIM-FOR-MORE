@@ -85,7 +85,7 @@ export default function Navbar() {
 
              
                 <span className="absolute top-[-5px] right-[-10px] bg-red-600 w-5 h-5 flex justify-center items-center rounded-full text-white text-xs">
-                 
+                 0
                 </span>
               
             </NavLink>

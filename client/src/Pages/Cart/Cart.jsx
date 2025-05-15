@@ -7,9 +7,18 @@
 
 // const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
 
+<<<<<<< HEAD
 // const Cart = () => {
 //   const [userId, setUserId] = useState(null);
 //   const {user} = useAuth()
+=======
+// const apiUrl = 'https://aim-for-more-server.onrender.com ';
+
+// const Cart = ({ userId }) => {
+//   const { totalUniqueItems, items, updateItemQuantity, cartTotal } = useCart()
+//   const [cart, setCart] = useState([]);
+//   const [bill, setBill] = useState(0);
+>>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
 //   const [loading, setLoading] = useState(false);
 
 //   const {

@@ -45,7 +45,11 @@ export const columns= [
   //   selector: (row) => row.file,
   //   cell:(row)=> (
   //     <div className='align-items-center d-flex rounded'>
+<<<<<<< HEAD
   //       <img src={`http://localhost:5000https://aim-for-more-server.onrender.com/images/${row.file}`}  style={{width: '38px', height:'38px'}}/>
+=======
+  //       <img src={`https://aim-for-more-server.onrender.com /images/${row.file}`}  style={{width: '38px', height:'38px'}}/>
+>>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
   //     </div>
   //   ),
   //   center:'true',
@@ -55,7 +59,7 @@ export const columns= [
     selector: row => row.file,
     cell: row => (
       <img
-        src={`${apiUrl}/images/${row.file}`}
+        src={row.file}
         alt={row.name}
         className="w-12 h-12 object-cover rounded-md border"
       />

@@ -49,10 +49,17 @@ function ViewBlog() {
   //   }
   // };
 
+<<<<<<< HEAD
   if (loading) return <div className='flex items-center justify-center space-x-2 mt-70'>
   <div className='w-5 h-3 border-4 border-emerald-700 border-t-transparent rounded-full animate-spin'></div>
   <div className='text-emerald-700 font-medium'>
     Loading Blog Post...
+=======
+  if (loading) return <div className='flex items-center justify-center space-x-2'>
+  <div className='w-5 h-3 border-4 border-emerald-700 border-t-transparent rounded-full animate-spin'></div>
+  <div className='text-emerald-700 font-medium mx-auto'>
+    Loading...
+>>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
   </div>
 </div>;
 
@@ -61,7 +68,11 @@ function ViewBlog() {
       <Navbar />
       {posts ? (
         <section>
+<<<<<<< HEAD
           <div className='flex shadow-lg max-w-3xl mx-auto mt-30 bg-white rounded-md shadow-lg py-4 px-3'>
+=======
+          <div className='flex shadow-lg max-w-3xl mx-auto mt-15 bg-white rounded-md shadow-lg'>
+>>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
             <div className=''>
               <div className='rounded-xl overflow-hidden'>
                 <img className='w-full' src={posts.file} alt='Blog Post' />

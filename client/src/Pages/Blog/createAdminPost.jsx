@@ -228,7 +228,11 @@ export default function createAdminPost() {
                           post.description.length > 50 ? `${post.description.substring(0, 50)}.......` : post.description
                         }</td>
                     <td className='p-1'>
+<<<<<<< HEAD
                       <img src={`http://localhost:5000https://aim-for-more-server.onrender.com /images/${post.file}`+file}  alt='blog imag' className='w-15 h-10 rounded-xl' />
+=======
+                      <img src={`https://aim-for-more-server.onrender.com /images/${post.file}`+file}  alt='blog imag' className='w-15 h-10 rounded-xl' />
+>>>>>>> 084b55a81113ef0de4db035d2fb9573fe07c907e
                     </td>
                     <td className='p-1'>
                     <Link to={'/dashboard/create/post/post/' + post._id} className='text-decoration-none'>

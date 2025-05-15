@@ -47,6 +47,11 @@ function AdminSidbar() {
           <FaTelegramPlane />
           <span>Message</span>
         </NavLink>
+        <NavLink to="/dashboard/popular" 
+           className={({isActive}) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-1 block py-2 px-2 rounded text-decoration-none text-white`}>
+          <FaTelegramPlane />
+          <span>Popular Products</span>
+        </NavLink>
         <NavLink to="/setting" 
           className={({isActive}) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-1 block py-2 px-1 rounded text-decoration-none text-white`}>
           <FaBolt />

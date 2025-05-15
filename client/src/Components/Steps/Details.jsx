@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CardModal from '../../Components/CardModal/CardModal'; // Adjust path as needed
+import CardModal from '../../Components/CardModal/CardModal'; 
 
 const Details = ({ formData, setFormData }) => {
   const [showCardModal, setShowCardModal] = useState(false);
@@ -24,7 +24,7 @@ const Details = ({ formData, setFormData }) => {
     const email = 'useremail@example.com'; // Use dynamic email from user
 
     try {
-      const response = await axios.post('https://aim-for-more-server.onrender.com/api/paystack/initialize', {
+      const response = await axios.post('http://localhost:5000https://aim-for-more-server.onrender.com/api/paystack/initialize', {
         amount, // Amount to be charged
         email,
       });

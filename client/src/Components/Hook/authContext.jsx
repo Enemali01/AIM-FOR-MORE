@@ -4,7 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 
 const userContext = createContext();
 const AuthContext = ({children}) => {

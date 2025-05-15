@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { colums , BlogButton } from '../../utils/BlogHelper'
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 function BlogDashboard() {
 
   const [filterPosts, setFilterPosts] = useState([])
@@ -57,7 +57,13 @@ function BlogDashboard() {
 
   return (
     <>
-    {loadingPost ? <div>Loading</div> : 
+    {loadingPost ? <div className='flex items-center justify-center space-x-2'>
+          <div className='w-5 h-3 border-4 border-emerald-700 border-t-transparent rounded-full animate-spin'></div>
+          <div className='text-emerald-700 font-medium'>
+            Loading Post....
+          </div>
+        </div> : 
+
       <section>
        <div className='p-6 '>
                   <h3 className='text-2xl text-center'>Manage Products</h3>

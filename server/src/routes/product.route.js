@@ -6,6 +6,7 @@ import authMiddleware from '../midlleware/authMiddleware.js'
 const router = Router();
 
 router.get('/all', getProduct)
+
 router.get('/search', searchProduct)
 router.get('/all-product', authMiddleware, getProduct)
 router.post('/add', upload.single('file'), create)

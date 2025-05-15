@@ -7,7 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { toast } from 'react-toastify'
 import axios from "axios";
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 
 function Register() {
   const [email, setEmail] = useState() 
@@ -68,7 +68,7 @@ function Register() {
                       <Form.Group id="phone">
                       <Form.Label>Phone</Form.Label>
                       <Form.Control 
-                      type="number"
+                      type="phone"
                       name="phone"
                       required 
                       onChange={e => setPhone(e.target.value)}

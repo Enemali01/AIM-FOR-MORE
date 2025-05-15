@@ -6,7 +6,7 @@ import * as FaIcon from 'react-icons/fa'
 import { Alert } from 'react-bootstrap'
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 
 function EditCategory() {
   const category = {

@@ -24,6 +24,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaUsers, FaShoppingCart, FaPhoneAlt, FaRocket, FaStore, FaChartLine, FaAward } from 'react-icons/fa';
 import Navbar from '../Components/Navbar/Navbar';
+import Footer from '../Components/Footer/Footer';
 
 
 const timelineData = [
@@ -57,7 +58,7 @@ const About = () => {
   return (
     <>
     <Navbar/>
-    <div className="px-4 py-10 md:px-20 bg-gray-50 container">
+    <div className="px-4 py-10 md:px-20 bg-gray-50 container mt-20">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -136,6 +137,7 @@ const About = () => {
         </div>
       </motion.div>
     </div>
+    <Footer/>
     </>
   );
 };

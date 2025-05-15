@@ -1,6 +1,6 @@
-// models/order.js
 import mongoose, { Schema, model } from 'mongoose';
 
+// Define order item sub-schema
 const orderItemSchema = new Schema({
   ItemId: { type: Schema.Types.ObjectId, ref: 'product', required: true },
   name: String,
@@ -9,15 +9,19 @@ const orderItemSchema = new Schema({
   file: String,
 });
 
+// Define main order schema
 const orderSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'user', required: true },
-  items: Array,
+  items: [orderItemSchema], 
   bill: Number,
   address: String,
   phone: String,
   payment: String,
-  status: { type: String, default: 'pending' },
+  status: {
+    type: String,
+    enum: ['pending', 'confirmed', 'shipped', 'completed'],
+    default: 'pending',},// set default to 'pemding'
+  estimatedDelivery: Date 
 }, { timestamps: true });
-
 
 export const Order = model('order', orderSchema);

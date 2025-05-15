@@ -1,11 +1,13 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import * as FaIcon from 'react-icons/fa';
-import {IoIosCloseCircle, IoMdArrowDropdown, IoMdClose} from 'react-icons/io';
+import { IoIosCloseCircle, IoMdArrowDropdown, IoMdClose } from 'react-icons/io';
 import logo from '../../assets/image/Aim-logo.jpg';
 import { useAuth } from '../Hook/authContext';
-import { useCart } from 'react-use-cart';
+import axios from 'axios';
+
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,15 +15,35 @@ export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const { user, logout } = useAuth();
-  const { items, updateItemQuantity } = useCart();
+  const [cartCount, setCartCount] = useState(0)
+
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user && user.token) {
+      axios.get(`${apiUrl}/api/cart/count`, {
+        headers:{
+          Authorization: `Bearer ${user.token}`,
+        }
+      })
+        .then(response => {
+          console.log('Cart count fetched:', response.data.itemCount);
+          setCartCount(response.data.itemCount);
+        })
+        .catch(error => {
+          console.error('Error fetching cart count:', error);
+        });
+    }
+  }, [user]);
+
+
+
   const handleLogout = () => {
-    updateItemQuantity(null, 0);
     logout();
     setShowDropdown(false);
   };
 
+  
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
@@ -39,6 +61,7 @@ export default function Navbar() {
     setShowDropdown(!showDropdown);
     setIsMenuOpen(false);
   };
+
 
   return (
     <>
@@ -69,7 +92,7 @@ export default function Navbar() {
                 <span>{user.lastname}</span>
                 <button onClick={toggleDropdown} className="focus:outline-none text-lg">
                   {/* <FaIcon.FaUser /> */}
-                  <IoMdArrowDropdown/>
+                  <IoMdArrowDropdown />
                 </button>
               </div>
             ) : (
@@ -79,9 +102,10 @@ export default function Navbar() {
             {/* Cart */}
             <NavLink to="/cart" className="relative">
               <FaIcon.FaShoppingCart className="text-xl text-white" />
-              {items.length > 0 && (
+
+              {cartCount > 0 && (
                 <span className="absolute top-[-5px] right-[-10px] bg-red-600 w-5 h-5 flex justify-center items-center rounded-full text-white text-xs">
-                  {items.length}
+                  {cartCount}
                 </span>
               )}
             </NavLink>
@@ -92,7 +116,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile nav links only */}
-        <div className={`xl:hidden bg-emerald-700 w-full text-lg flex flex-col text-white border-t transition-all duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`xl:hidden mt-10 bg-emerald-700 w-full text-lg flex flex-col text-white border-t transition-all duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>
           <Link to="/about" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link to="/product" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>Shop</Link>
           <Link to="/contact" className="text-center text-white text-decoration-none py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
@@ -113,7 +137,7 @@ export default function Navbar() {
         {showSearch && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
             <div className="bg-white p-6 rounded shadow-md w-full max-w-md relative">
-              <button onClick={() => setShowSearch(false)} className="absolute top-2 right-2 text-red-500 text-xl"><IoIosCloseCircle/></button>
+              <button onClick={() => setShowSearch(false)} className="absolute top-2 right-2 text-red-500 text-xl"><IoIosCloseCircle /></button>
               <h5 className="text-lg font-semibold mb-4">Search Products</h5>
               <form onSubmit={handleSearchSubmit}>
                 <input

@@ -3,7 +3,6 @@ import {UserModel} from '../model/userModel.js'
 
 // Create an order
 export const placeOrder = async (req, res) => {
- 
   const { userId, items, bill, address, phone, payment } = req.body;
 
   if (!userId || !items || items.length === 0) {
@@ -15,8 +14,10 @@ export const placeOrder = async (req, res) => {
       userId,
       items,
       bill,
-      address, phone, payment,
-      status: 'pending',
+      address,
+      phone,
+      payment,
+      status: 'pending' // Now defaults to processing
     });
 
     await order.save();
@@ -25,6 +26,7 @@ export const placeOrder = async (req, res) => {
     res.status(500).json({ error: 'Failed to place order', message: err.message });
   }
 };
+
 
 // Get all orders for a user
 export const getUserOrders = async (req, res) => {
@@ -40,38 +42,35 @@ export const getUserOrders = async (req, res) => {
 
 
 
-// Update order status
-export const updateOrderStatus = async (req, res) => {
-  const { orderId } = req.params;
-  const { status } = req.body;
 
-  if (!['pending', 'completed'].includes(status)) {
-    return res.status(400).json({ error: 'Invalid status' });
-  }
+// Update order status
+
+export const updateOrderStatus = async (req, res) => {
+  const { status, estimatedDelivery } = req.body;
+  const { orderId } = req.params;
 
   try {
-    const updated = await Order.findByIdAndUpdate(
-      orderId,
-      { status },
-      { new: true }
-    );
+    const order = await Order.findById(orderId);
+    if (!order) {
+      return res.status(404).json({ message: 'Order not found' });
+    }
 
-    if (!updated) return res.status(404).json({ error: 'Order not found' });
+    order.status = status;
 
-    res.status(200).json({ success: true, order: updated });
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to update order', message: err.message });
+    if (status === 'shipped') {
+      if (!estimatedDelivery) {
+        return res.status(400).json({ message: 'Estimated delivery date is required for shipped orders' });
+      }
+      order.estimatedDelivery = new Date(estimatedDelivery);
+    }
+
+    await order.save();
+    res.status(200).json({ message: 'Order updated successfully', order });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Something went wrong' });
   }
 };
-
-// export const getAllOrders = async (req, res) => {
-//   try {
-//     const orders = await Order.find().sort({ createdAt: -1 });
-//     res.status(200).json({ success: true, orders });
-//   } catch (err) {
-//     res.status(500).json({ error: 'Failed to fetch orders' });
-//   }
-// };
 
 
 export const getAllOrders = async (req, res) => {
@@ -108,7 +107,7 @@ export const getPendingOrdersByStatus = async (req, res) => {
     res.status(200).json({ total: orders });
   } catch (err) {
     console.log(err)
-  //   res.status(500).json({ message: 'Error fetching total order count', error: err.message });
+    res.status(500).json({ message: 'Error fetching total order count', error: err.message });
    }
 };
 

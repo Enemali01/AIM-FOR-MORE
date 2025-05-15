@@ -1,7 +1,8 @@
 
-import { Category } from "../model/categoryModel.js";
 import { Product } from "../model/productModel.js";
 import crypto from 'crypto'
+import cloudinary from "../midlleware/cloudinary.js";
+import streamifier from 'streamifier';
 
 export const getProduct = async (req, res) => {
   try {
@@ -13,27 +14,77 @@ export const getProduct = async (req, res) => {
 }
 
 
+// export const create = async (req, res) => {
+//   let productIdCounter = crypto.randomUUID() ;
+//   try {
+//     const {id, name, price, quantity, description, category } = req.body;
+//     const file = req.file.filename;
+//     const product = new Product({
+//       id: productIdCounter,
+//       name,
+//       price,
+//       quantity,
+//       category,
+//       description,
+//       file,
+//     })
+//   await product.save();
+  
+//     res.status(200).json({ message: 'Product save succesfuuly' });
+//   } catch (error) {
+//     res.status(500).json(error)
+//   }
+// }
+
 export const create = async (req, res) => {
-  let productIdCounter = crypto.randomUUID() ;
+  const productIdCounter = crypto.randomUUID();
+
   try {
-    const {id, name, price, quantity, description, category } = req.body;
-    const file = req.file.filename;
+    const { name, price, quantity, description, category } = req.body;
+
+    if (!req.file) {
+      return res.status(400).json({ message: 'No image file uploaded' });
+    }
+
+    // Upload image to Cloudinary using memory stream
+    const streamUpload = () => {
+      return new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          { folder: 'products' }, 
+          (error, result) => {
+            if (result) {
+              resolve(result);
+            } else {
+              reject(error);
+            }
+          }
+        );
+        streamifier.createReadStream(req.file.buffer).pipe(stream);
+      });
+    };
+
+    const result = await streamUpload(); 
+
     const product = new Product({
       id: productIdCounter,
       name,
       price,
       quantity,
-      category,
       description,
-      file,
-    })
-  await product.save();
-  
-    res.status(200).json({ message: 'Product save succesfuuly' });
+      category,
+      file: result.secure_url, 
+    });
+
+    await product.save();
+
+    res.status(200).json({ message: 'Product saved successfully' });
   } catch (error) {
-    res.status(500).json(error)
+    // console.error('Upload Error:', error);
+    res.status(500).json({ message: 'Error uploading product', error: error.message || error });
   }
-}
+  
+};
+
 
 export const productById = async (req, res) => {
   try {
@@ -53,11 +104,11 @@ export const productById = async (req, res) => {
 export const editProduct = async (req, res) => {
   try {
     const id = req.params.id;
-    const { name, price, quantity, description, stars, category } = req.body;
+    const { name, price, quantity, description, category } = req.body;
     const edit = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
     })
-    res.status(200).json({ message: 'Post has been edited Successfull' }).json(edit)
+    res.status(200).json({ message: 'Post has been edited Successfull', edit })
   } catch (error) {
     console.log(error)
   }
@@ -110,4 +161,6 @@ export const searchProduct = async (req,res) => {
 
 }
 
-export default { create, getProduct, productById, editProduct, deleteProduct, getProductsByCategory, searchProduct };
+
+
+export default { create, getProduct, productById, editProduct, deleteProduct, getProductsByCategory, searchProduct};

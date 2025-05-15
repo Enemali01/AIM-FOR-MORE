@@ -38,6 +38,7 @@ import Shop from '../Pages/Shop/Shop'
 import Contact from '../Pages/Contact/Contact'
 import Message from '../Pages/Message/Message'
 import SearchPage from '../Pages/Search/SearchPage'
+import Popular from '../Pages/Popular/Popular'
 
 
 
@@ -168,6 +169,13 @@ function AppRoutes() {
       <Category />
     </RoleBasedRoute>
   } />
+
+<Route path='popular' element={
+    <RoleBasedRoute requiredRole={['admin']}>
+      <Popular />
+    </RoleBasedRoute>
+  } />
+  
   
   <Route path='category/add-category' element={
     <RoleBasedRoute requiredRole={['admin']}>

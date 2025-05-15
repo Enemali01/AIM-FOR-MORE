@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 // import { CartContext } from '../../Components/Hook/ContextProvider'
 
 
-const apiUrl ='https://aim-for-more-server.onrender.com'
+const apiUrl ='http://localhost:5000https://aim-for-more-server.onrender.com'
 
 const CartProduct = ({products}) => {
 // const {cart,dispatch} = useContext(CartContext)
@@ -23,7 +23,7 @@ const CartProduct = ({products}) => {
   return (
     <div className='flex  mt-3'>
         <img 
-        src={`${apiUrl}/images/${products.file}`} 
+        src={products.file} 
         className='w-10 object-fit h-10 rounded-3xl hover:scale-110 transition-all'
         alt={products.name}
         />

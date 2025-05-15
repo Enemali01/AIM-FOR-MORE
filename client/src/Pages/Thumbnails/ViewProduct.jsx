@@ -2,13 +2,39 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'
-import { useCart } from 'react-use-cart'
+import { toast } from 'react-toastify'
+import { useAuth } from '../../Components/Hook/authContext'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 
 function ViewProduct() {
-  const {addItem, updateItemQuantity, items} = useCart()
-
+  const {user} = useAuth()
+  
+   const handleAddToCart = async (productId) => {
+      toast.success(`${productId.name} added to cart ✅`);
+    
+      if (!user?._id || user.role !== 'user') return;
+    
+      try {
+        await axios.post(`${apiUrl}/api/cart/add-to-cart`, {
+          userId: user._id,
+          cartItems: [
+            {
+              ItemId: productId._id,
+              name: productId.name,
+              price: productId.price,
+              quantity: 1,
+              file: productId.file,
+            },
+          ],
+        });
+      } catch (error) {
+        console.error('Failed to save cart:', error);
+      }
+    };
+    
+  
   const {id} = useParams()
   const [productId, setProductId] = useState([])
 
@@ -26,12 +52,12 @@ function ViewProduct() {
     <Navbar/>
     {productId ? (
     <section>
-      <div className='shadow-md max-w-2xl mx-auto mt-10 bg-white rounded px-6 py-3 mb-5'>
+      <div className='shadow-md max-w-2xl mx-auto mt-10 bg-white rounded px-6 py-3 mb-5 mt-20'>
         <h3 className='text-center px-1 py-3 text-success'>Product Details</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
           <div>
           <img 
-          src={`${apiUrl}/images/${productId.file}`}  
+          src={productId.file}  
           alt='productImage'
           className='rounded border w-full'
           />
@@ -57,10 +83,12 @@ function ViewProduct() {
             className='bg-gray-200 h-full w-10 font-bold text-xl rounded-xl flex justify-center items-center'>+</button> */}
           </div>
           
-          <button 
-           onClick={() => addItem(productId)}
-          
-          className='bg-emerald-700 px-3 py-2 w-full rounded mb-3 text-white'>Add to Cart</button>
+          <button
+                    className="bg-emerald-700 text-white px-4 py-2 rounded"
+                    onClick={() => handleAddToCart(productId)}
+                  >
+                    Add to Cart
+                  </button>
           </div>
           </div>
           <div className='space-x-3'>

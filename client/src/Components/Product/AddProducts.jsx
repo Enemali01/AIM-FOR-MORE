@@ -6,7 +6,7 @@ import { Alert } from 'react-bootstrap'
 import { toast } from 'react-toastify'
 
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 
 
 export default function AddProducts() {

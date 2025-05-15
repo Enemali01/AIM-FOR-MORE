@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Heroblogimg from '../../assets/image/london2.jpeg'
 import Footer from '../../Components/Footer/Footer'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 
 function Post() {
  
@@ -45,7 +45,7 @@ function Post() {
        <Navbar />
 
   <section>
-    <div className=''>
+    <div className='mt-15'>
       <img src={Heroblogimg} alt='blog-hero'  className='h-10 w-full' style={{height:'500px'}}/>
       <h1 className=' text-5xl absolute right-1/2 top-1/3 bottom text-success translate-y-1/2 translate-x-1/2'>Blog post</h1>
     </div>
@@ -59,7 +59,7 @@ function Post() {
         return   <div className='card rounded-md shadow-xl'>
         <div className='py-1 px-1 flex flex-col'>
           <div className='rounded-xl overflow-hidden'>
-          <Link to={`/blog/${post._id}`}><img  className='w-full h-55' src={`${apiUrl}/images/${post.file}`} alt='blopost'/></Link>
+          <Link to={`/blog/${post._id}`}><img  className='w-full h-55' src={post.file} alt='blopost'/></Link>
           </div>
           <h6 className='text-2xl md:text-3xl font-medium mt-2'>{post.title}</h6>
           <p className='text-1xl md:text-1xl mt-1'>{post.description.length > 100 ? `${post.description.substring(0, 80)}....` : post.description}</p>

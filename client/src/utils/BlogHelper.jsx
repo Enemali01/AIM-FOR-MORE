@@ -3,7 +3,7 @@ import * as FaIcon from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-const apiUrl = 'https://aim-for-more-server.onrender.com'
+const apiUrl = 'http://localhost:5000https://aim-for-more-server.onrender.com'
 export const colums = [
     {
       name: 'SN',
@@ -34,7 +34,7 @@ export const colums = [
       selector: (row) => row.file,
       cell:(row)=> (
         <div className='align-items-center d-flex rounded'>
-          <img src={`https://aim-for-more-server.onrender.com/images/${row.file}`}  style={{width: '38px', height:'38px'}}/>
+          <img src={`http://localhost:5000https://aim-for-more-server.onrender.com/images/${row.file}`}  style={{width: '38px', height:'38px'}}/>
         </div>
       ),
       center:'true',

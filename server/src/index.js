@@ -16,6 +16,7 @@ import cartRoute from  './routes/cart.route.js'
 import orderRoute from './routes/order.route.js'
 import contactRoute from './routes/contact.route.js'
 import blogComment from './routes/blogComment.route.js'
+import popularRoute from './routes/popular.route.js'
 
 connectDB();
 const app = express();
@@ -31,7 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(cors({
-  origin: 'https://aim-for-more-client.onrender.com',
+   origin: 
+  //  'http://localhost:8080',
+   'https://aim-for-more-client.onrender.com',
   credentials: true, 
    methods: 'PUT, POST, GET, DELETE, PATCH, HEAD'
 }));
@@ -46,6 +49,7 @@ app.use('/api/cart', cartRoute)
 app.use('/api/order', orderRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/blog-comment', blogComment)
+app.use('/api/popular', popularRoute)
 
 
 app.listen(process.env.PORT, ()=>{

@@ -11,7 +11,7 @@ import Testimonial from '../../Components/Testimonial/Testimonial'
 import axios from 'axios'
 import { Link, Links } from 'react-router-dom'
 import { FaStar, FaShippingFast, FaHeadset } from 'react-icons/fa';
-import heroImg from '../../assets/image/cop-img10.jpeg'
+import heroImg from '../../assets/cop-img10.jpeg'
 
 
 const apiUrl = 'https://aim-for-more-server.onrender.com';

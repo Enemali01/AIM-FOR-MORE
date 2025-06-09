@@ -90,7 +90,7 @@ useEffect(() => {
             </Col>
           </Row>
         </Container> */}
-        {loading
+        {/* {loading
   ? [...Array(4)].map((_, i) => (
       <div key={i} className="bg-white p-6 rounded-lg shadow-lg text-center animate-pulse">
         <div className="h-6 bg-emerald-100 rounded w-2/3 mx-auto"></div>
@@ -104,9 +104,34 @@ useEffect(() => {
           </h3>
         </Link>
       </div>
-    ))}
+    ))} */}
 
       </section>
+      <section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-2xl font-semibold text-emerald-800 text-center mb-8">Shop by Categories</h2>
+    
+    <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      {loading
+        ? [...Array(4)].map((_, i) => (
+            <div key={i} className="bg-white p-6 rounded-lg shadow animate-pulse">
+              <div className="h-6 bg-emerald-100 rounded w-2/3 mx-auto mb-2"></div>
+              <div className="h-4 bg-emerald-100 rounded w-1/3 mx-auto"></div>
+            </div>
+          ))
+        : categories.map((category) => (
+            <div key={category._id} className="bg-white p-6 rounded-lg shadow text-center">
+              <Link to={`/product`} className="text-decoration-none text-success">
+                <h3 className="text-sm font-semibold text-emerald-800 cursor-pointer hover:text-emerald-600">
+                  {category.category}
+                </h3>
+              </Link>
+            </div>
+          ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Trending Products Section */}
       <section className="py-16 bg-white">

@@ -24,26 +24,34 @@ function Home() {
   const [popularProducts, setPopularProducts] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
 
-  useEffect(() => {
-    // Fetch all popular products
-    axios.get(`${apiUrl}/api/popular/`)
-      .then(response => {
-        setTrending(response.data);
-      })
-      .catch(error => console.error('Error fetching popular products', error));
-  }, []);
+ useEffect(() => {
+  setLoading(true);
+  axios.get(`${apiUrl}/api/popular/`)
+    .then(response => setTrending(response.data))
+    .catch(error => console.error('Error fetching popular products', error))
+    .finally(() => setLoading(false));
+}, []);
+
+useEffect(() => {
+  setLoading(true);
+  axios.get(`${apiUrl}/api/category/all`)
+    .then(response => setCategories(response.data))
+    .catch(error => console.error('Error fetching categories:', error))
+    .finally(() => setLoading(false));
+}, []);
 
 
 
-  useEffect(() => {
-    axios.get(`${apiUrl}/api/category/all`)
-      .then(response => {
-        setCategories(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching categories:', error);
-      });
-  }, [])
+
+  // useEffect(() => {
+  //   axios.get(`${apiUrl}/api/category/all`)
+  //     .then(response => {
+  //       setCategories(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching categories:', error);
+  //     });
+  // }, [])
   return (
     <>
       <Navbar />
@@ -62,7 +70,7 @@ function Home() {
 
       {/* Featured Categories Section */}
       <section className="py-16 bg-gray-50">
-        <Container>
+        {/* <Container>
           <Row>
             <Col lg={12}>
               <h2 className="text-2xl font-semibold text-emerald-800 text-center mb-8">Shop by Categories</h2>
@@ -81,12 +89,28 @@ function Home() {
               </div>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
+        {loading
+  ? [...Array(4)].map((_, i) => (
+      <div key={i} className="bg-white p-6 rounded-lg shadow-lg text-center animate-pulse">
+        <div className="h-6 bg-emerald-100 rounded w-2/3 mx-auto"></div>
+      </div>
+    ))
+  : categories.map(category => (
+      <div key={category._id} className="bg-white p-6 rounded-lg shadow-lg text-center">
+        <Link to={`/product`} className="text-decoration-none text-success">
+          <h3 className="text-sm font-semibold text-emerald-800 cursor-pointer hover:text-emerald-600">
+            {category.category}
+          </h3>
+        </Link>
+      </div>
+    ))}
+
       </section>
 
       {/* Trending Products Section */}
       <section className="py-16 bg-white">
-        <Container>
+        {/* <Container>
           <Row>
             <Col lg={12}>
               <h2 className="text-2xl font-semibold text-emerald-800 text-center mb-8">Trending Products</h2>
@@ -107,7 +131,34 @@ function Home() {
               </div>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
+
+        {loading
+  ? [...Array(3)].map((_, i) => (
+      <div key={i} className="bg-white p-6 rounded-lg shadow-lg animate-pulse">
+        <div className="w-full h-40 bg-gray-200 rounded mb-4"></div>
+        <div className="flex justify-between mt-2 px-4 py-3">
+          <div className="w-1/2 h-4 bg-emerald-100 rounded"></div>
+          <div className="w-1/4 h-4 bg-emerald-100 rounded"></div>
+        </div>
+        <div className="h-3 bg-gray-200 rounded w-full mt-2"></div>
+        <div className="mt-4 h-8 w-24 bg-emerald-300 rounded"></div>
+      </div>
+    ))
+  : trending.map(product => (
+      <div key={product._id} className="bg-white p-6 rounded-lg shadow-lg">
+        <img src={product.image} alt={product.product.name} className="w-90 h-38 object-cover rounded-t-lg" />
+        <div className="flex justify-between mt-2 px-4 py-3">
+          <h6 className="text-lg font-semibold text-emerald-800">{product.product.name}</h6>
+          <h6 className="text-lg font-semibold text-emerald-800">N{product.product.amount}</h6>
+        </div>
+        <p className="text-gray-600">{product.product.description}</p>
+        <Link to='/product' className='text-decoration-none'>
+          <button className="px-4 py-2 bg-emerald-700 text-white text-sm rounded">View More</button>
+        </Link>
+      </div>
+    ))}
+
       </section>
 
       {/* Why Shop With Us Section */}
